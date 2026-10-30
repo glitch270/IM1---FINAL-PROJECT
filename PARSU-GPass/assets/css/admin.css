@@ -1,0 +1,137 @@
+/**
+ * PARSU-GPass: Admin Stylesheet
+ */
+
+.filter-form {
+    width: 100%;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.search-input-wrap {
+    flex: 1;
+    min-width: 250px;
+}
+
+.filter-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-group-sm {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.app-details-grid {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.app-details-main {
+    flex: 2;
+    min-width: 0;
+}
+
+.app-details-sidebar {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Document Inspector Layout */
+.doc-inspector-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.doc-list-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.doc-preview-area {
+    flex: 1;
+    min-width: 0;
+}
+
+.inspector-doc-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inspector-doc-nav li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    background: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.inspector-doc-nav li a:hover {
+    background-color: #f8fafc;
+    border-color: var(--primary-light);
+}
+
+.inspector-doc-nav li.active a {
+    background-color: #f0fdf4;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 2px rgba(22, 91, 59, 0.15);
+}
+
+.doc-idx-badge {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.inspector-doc-nav li.active .doc-idx-badge {
+    background: var(--primary-light);
+    color: #ffffff;
+}
+
+.doc-name-text {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.preview-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.preview-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+

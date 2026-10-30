@@ -1,0 +1,81 @@
+/**
+ * PARSU-GPass: Registration Stylesheet
+ */
+
+.register-container {
+    width: 100%;
+    max-width: 780px;
+}
+
+.role-selector-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.role-radio-card {
+    display: block;
+    position: relative;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #ffffff;
+}
+
+.role-radio-card input[type="radio"] {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.role-radio-card:hover {
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.role-radio-card.selected {
+    border-color: var(--primary-light);
+    background-color: #f0fdf4;
+    box-shadow: 0 0 0 2px rgba(22, 91, 59, 0.2);
+}
+
+.role-icon {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.role-label {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.role-fee {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    margin-top: 3px;
+}
+
+.form-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-section-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+

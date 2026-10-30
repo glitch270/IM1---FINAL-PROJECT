@@ -1,0 +1,144 @@
+/**
+ * PARSU-GPass: Login Stylesheet
+ */
+
+.auth-page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+    background: linear-gradient(135deg, #09281a 0%, #0e3e28 50%, #165b3b 100%);
+}
+
+.auth-card-container {
+    width: 100%;
+    max-width: 460px;
+}
+
+.auth-brand-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-logo-wrap {
+    display: inline-flex;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.auth-logo-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid var(--gold-color);
+}
+
+.auth-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.auth-title span {
+    color: var(--gold-light);
+}
+
+.auth-subtitle {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 4px;
+}
+
+.auth-card {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border: none;
+}
+
+.auth-card-heading {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.auth-card-desc {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    margin-bottom: 22px;
+}
+
+.input-icon-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.input-icon-wrap .form-control {
+    padding-left: 38px;
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.05rem;
+    opacity: 0.7;
+}
+
+.password-toggle-btn:hover {
+    opacity: 1;
+}
+
+.auth-footer-links {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 0.88rem;
+    line-height: 1.8;
+}
+
+.demo-credentials-box {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    color: #ffffff;
+    font-size: 0.82rem;
+}
+
+.demo-header {
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--gold-light);
+}
+
+.demo-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.demo-item code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.82rem;
+}
+
