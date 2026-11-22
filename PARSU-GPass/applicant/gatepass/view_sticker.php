@@ -74,14 +74,21 @@ include __DIR__ . '/../../includes/header.php';
 
     <!-- Printable Official Gate Pass Certificate / Badge -->
     <div class="gatepass-certificate-wrap" style="max-width: 800px; margin: 0 auto;">
-        <div class="physical-sticker-card <?= $gatepass['applicant_type'] === 'employee' ? 'sticker-employee' : 'sticker-student' ?>" style="margin-bottom: 25px;">
+        <?php
+        $validTimestamp = !empty($gatepass['valid_until']) ? strtotime($gatepass['valid_until']) : time();
+        $validMonth = strtoupper(date('M', $validTimestamp));
+        $validDay = date('d,', $validTimestamp);
+        $validYear = date('Y', $validTimestamp);
+        $formattedStickerNumber = preg_replace('/\s*-\s*/', ' - ', $gatepass['sticker_number'] ?? '');
+        ?>
+        <div class="physical-sticker-card <?= ($gatepass['applicant_type'] ?? '') === 'employee' ? 'sticker-employee' : 'sticker-student' ?>" style="margin-bottom: 25px;">
             <div class="sticker-header">
-                <div class="sticker-emblem-wrap">
-                    <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="University Seal" class="sticker-emblem">
-                </div>
-                <div class="sticker-header-text">
-                    <h4 class="sticker-univ-title"><?= strtoupper(e(UNIVERSITY_NAME)) ?></h4>
-                    <span class="sticker-tagline">OFFICIAL CAMPUS VEHICLE GATE PASS</span>
+                <div class="sticker-brand-wrap">
+                    <img src="<?= BASE_URL ?>/assets/images/PSU%20LOGO.png" alt="University Seal" class="sticker-emblem">
+                    <div class="sticker-header-text">
+                        <div class="sticker-univ-title">PARTIDO STATE UNIVERSITY</div>
+                        <div class="sticker-tagline">OFFICIAL CAMPUS VEHICLE GATE PASS</div>
+                    </div>
                 </div>
                 <div class="sticker-type-pill">
                     <?= strtoupper(e($gatepass['applicant_type'])) ?>
@@ -90,13 +97,13 @@ include __DIR__ . '/../../includes/header.php';
 
             <div class="sticker-body">
                 <div class="sticker-number-banner">
-                    <?= e($gatepass['sticker_number']) ?>
+                    <?= e($formattedStickerNumber) ?>
                 </div>
 
                 <div class="sticker-plate-box">
-                    <span class="plate-label">VEHICLE PLATE / MV FILE:</span>
+                    <div class="plate-label">VEHICLE PLATE / MV FILE:</div>
                     <div class="plate-code"><?= e($gatepass['plate_number']) ?></div>
-                    <span class="plate-type"><?= e($gatepass['vehicle_type']) ?> &bull; <?= e($gatepass['color']) ?></span>
+                    <div class="plate-type"><?= e($gatepass['vehicle_type']) ?> &bull; <?= e($gatepass['color']) ?></div>
                 </div>
 
                 <div class="sticker-holder-info">
@@ -107,19 +114,50 @@ include __DIR__ . '/../../includes/header.php';
 
             <div class="sticker-footer">
                 <div class="sticker-validity-col">
-                    <span class="valid-label">VALID UNTIL:</span>
-                    <span class="valid-val font-bold"><?= strtoupper(date('M d, Y', strtotime($gatepass['valid_until']))) ?></span>
+                    <div class="valid-label">VALID UNTIL:</div>
+                    <div class="valid-date-lines">
+                        <span class="valid-month"><?= $validMonth ?> </span><span class="valid-day"><?= $validDay ?></span>
+                        <div class="valid-year"><?= $validYear ?></div>
+                    </div>
                 </div>
-                <div class="sticker-barcode-mock">
-                    ||| | |||| | || ||||| | ||||| | |||
+                <div class="sticker-barcode-wrap">
+                    <svg class="sticker-barcode-svg" viewBox="0 0 300 52" width="280" height="48" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="8" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="16" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="38" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="60" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="68" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="76" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="84" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="106" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="128" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="136" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="158" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="166" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="174" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="182" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="190" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="212" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="234" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="242" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="250" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="258" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="266" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="288" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="0" y="28" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="8" y="28" width="4.5" height="22" rx="1.5" fill="#000035" />
+                        <rect x="16" y="28" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    </svg>
                 </div>
             </div>
         </div>
 
         <!-- Official Gate Pass Authority Document -->
-        <div class="card certificate-sheet" style="padding: 30px; background: #fff; border: 2px solid #0e3e28;">
+        <div class="card certificate-sheet" style="padding: 30px; background: #fff; border: 2px solid #000035;">
             <div class="certificate-header text-center" style="border-bottom: 2px solid #c69214; padding-bottom: 15px; margin-bottom: 20px;">
-                <h2 style="color: #0e3e28; margin: 0; font-size: 1.4rem;"><?= strtoupper(e(UNIVERSITY_NAME)) ?></h2>
+                <img src="<?= BASE_URL ?>/assets/images/PSU%20LOGO.png" alt="Partido State University Logo" style="height: 72px; width: auto; object-fit: contain; display: block; margin: 0 auto 8px;">
+                <h2 style="color: #000035; margin: 0; font-size: 1.4rem;"><?= strtoupper(e(UNIVERSITY_NAME)) ?></h2>
                 <h4 style="color: #555; margin: 5px 0 0 0; font-weight: normal;">Office of Campus Safety and Security Services</h4>
                 <h3 style="color: #c69214; margin-top: 10px; font-size: 1.2rem; letter-spacing: 2px;">CERTIFICATE OF VEHICLE GATE PASS REGISTRATION</h3>
             </div>

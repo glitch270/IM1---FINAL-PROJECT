@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Administrator Profile Page
  */
@@ -52,7 +52,7 @@ include __DIR__ . '/../includes/header.php';
 <div class="profile-layout-grid">
     <div class="card profile-card">
         <div class="profile-avatar-wrap">
-            <div class="profile-avatar-large" style="background: #165b3b;">
+            <div class="profile-avatar-large" style="background: #000035;">
                 ADM
             </div>
             <h2 class="profile-fullname">Campus Security Admin</h2>
@@ -116,4 +116,5 @@ include __DIR__ . '/../includes/header.php';
 </div>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
+
 

@@ -12,9 +12,7 @@ function isNavActive(string $pathSubstring, string $currentScript): bool {
 <aside class="app-sidebar" id="appSidebar">
     <div class="sidebar-header">
         <a href="<?= BASE_URL ?>/<?= $role ?>/dashboard.php" class="sidebar-brand">
-            <div class="brand-logo-wrap">
-                <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="PARSU Logo" class="brand-logo-img">
-            </div>
+            <img src="<?= BASE_URL ?>/assets/images/PSU%20LOGO.png" alt="PARSU Logo" class="brand-logo-img">
             <div class="brand-text-wrap">
                 <h2 class="brand-main">PARSU-<span>GPass</span></h2>
                 <span class="brand-sub">Gate Pass Portal</span>
@@ -183,7 +181,7 @@ function isNavActive(string $pathSubstring, string $currentScript): bool {
             <span class="sidebar-user-role"><?= strtoupper(e($role)) ?></span>
             <span class="sidebar-user-email"><?= e($_SESSION['user_email'] ?? '') ?></span>
         </div>
-        <a href="<?= BASE_URL ?>/logout.php" class="sidebar-logout-link" title="Logout">🚪</a>
+        <a href="<?= BASE_URL ?>/logout.php" class="sidebar-logout-link" title="Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
     </div>
 </aside>
 <div class="sidebar-backdrop" id="sidebarBackdrop"></div>

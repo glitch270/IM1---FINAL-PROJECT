@@ -15,7 +15,8 @@ $profileLink = ($role === 'admin') ? BASE_URL . '/admin/profile.php' : BASE_URL 
             <span class="hamburger-bar"></span>
             <span class="hamburger-bar"></span>
         </button>
-        <div class="topbar-brand-mobile">
+        <div class="topbar-brand-mobile" style="display: flex; align-items: center; gap: 8px;">
+            <img src="<?= BASE_URL ?>/assets/images/PSU%20LOGO.png" alt="PSU Logo" style="height: 28px; width: auto; object-fit: contain;">
             <span class="brand-title">PARSU-<span>GPass</span></span>
         </div>
     </div>
@@ -35,7 +36,7 @@ $profileLink = ($role === 'admin') ? BASE_URL . '/admin/profile.php' : BASE_URL 
         </div>
 
         <a href="<?= BASE_URL ?>/logout.php" class="btn btn-outline-danger btn-sm logout-btn" title="Sign Out">
-            <span class="btn-icon">🚪</span>
+            <span class="btn-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
             <span class="btn-text">Logout</span>
         </a>
     </div>

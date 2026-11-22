@@ -38,8 +38,8 @@
 
 .role-radio-card.selected {
     border-color: var(--primary-light);
-    background-color: #f0fdf4;
-    box-shadow: 0 0 0 2px rgba(22, 91, 59, 0.2);
+    background-color: #f0f4fd;
+    box-shadow: 0 0 0 2px rgba(21, 51, 102, 0.2);
 }
 
 .role-icon {

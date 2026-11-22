@@ -81,18 +81,18 @@ include __DIR__ . '/../../includes/header.php';
     </div>
     <div class="header-action-group">
         <a href="<?= BASE_URL ?>/admin/applications/review_documents.php?id=<?= $appId ?>" class="btn btn-outline-secondary">
-            📑 Inspect Documents Full-screen
+            <i class="fa-solid fa-expand"></i> Inspect Documents Full-screen
         </a>
         <?php if (in_array($app['application_status'], ['pending', 'resubmitted'])): ?>
             <button type="button" class="btn btn-success" onclick="openApproveModal()">
-                ✓ Approve Application
+                <i class="fa-solid fa-check"></i> Approve Application
             </button>
             <button type="button" class="btn btn-danger" onclick="openDeclineModal()">
-                ✕ Decline Application
+                <i class="fa-solid fa-xmark"></i> Decline Application
             </button>
         <?php elseif ($app['application_status'] === 'paid' && !$app['sticker_number']): ?>
             <a href="<?= BASE_URL ?>/admin/gatepass/generate_sticker.php?id=<?= $appId ?>" class="btn btn-primary">
-                🏷️ Generate Gate Pass Sticker
+                <i class="fa-solid fa-id-card"></i> Generate Gate Pass Sticker
             </a>
         <?php endif; ?>
     </div>
@@ -265,14 +265,14 @@ include __DIR__ . '/../../includes/header.php';
     <div class="app-details-sidebar">
         <!-- Review Action Box (For Pending/Resubmitted) -->
         <?php if (in_array($app['application_status'], ['pending', 'resubmitted'])): ?>
-            <div class="card" style="margin-bottom: 20px; border-top: 4px solid #165b3b;">
+            <div class="card" style="margin-bottom: 20px; border-top: 4px solid #000035;">
                 <h3 class="card-heading" style="margin-bottom: 15px;">Evaluation Action</h3>
                 <div style="display: flex; flex-direction: column; gap: 10px;">
                     <button type="button" class="btn btn-success btn-block" onclick="openApproveModal()">
-                        ✓ Approve Application
+                        <i class="fa-solid fa-check"></i> Approve Application
                     </button>
                     <button type="button" class="btn btn-danger btn-block" onclick="openDeclineModal()">
-                        ✕ Decline Application
+                        <i class="fa-solid fa-xmark"></i> Decline Application
                     </button>
                 </div>
             </div>
@@ -329,7 +329,7 @@ include __DIR__ . '/../../includes/header.php';
     </div>
 </div>
 
-<!-- Modal: Approve Application -->
+<i class="fa-solid fa-check"></i> Approve Application -->
 <div class="modal-backdrop" id="approveModal" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content card">
@@ -360,12 +360,12 @@ include __DIR__ . '/../../includes/header.php';
     </div>
 </div>
 
-<!-- Modal: Decline Application -->
+<i class="fa-solid fa-xmark"></i> Decline Application -->
 <div class="modal-backdrop" id="declineModal" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content card">
             <div class="modal-header">
-                <h3 class="modal-title text-danger">Decline Application</h3>
+                <i class="fa-solid fa-xmark"></i> Decline Application</h3>
                 <button type="button" class="modal-close-btn" onclick="closeDeclineModal()">&times;</button>
             </div>
             <form action="<?= BASE_URL ?>/actions/application_review_process.php" method="POST">
@@ -406,4 +406,5 @@ function closeDeclineModal() {
 </script>
 
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
+
 

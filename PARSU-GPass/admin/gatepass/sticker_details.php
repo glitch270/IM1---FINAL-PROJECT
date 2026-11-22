@@ -50,14 +50,21 @@ include __DIR__ . '/../../includes/header.php';
 
 <!-- Physical Sticker Badge Preview Box -->
 <div class="sticker-print-container" style="display: flex; justify-content: center; margin: 20px 0;">
-    <div class="physical-sticker-card <?= $sticker['applicant_type'] === 'employee' ? 'sticker-employee' : 'sticker-student' ?>">
+    <?php
+    $validTimestamp = !empty($sticker['valid_until']) ? strtotime($sticker['valid_until']) : time();
+    $validMonth = strtoupper(date('M', $validTimestamp));
+    $validDay = date('d,', $validTimestamp);
+    $validYear = date('Y', $validTimestamp);
+    $formattedStickerNumber = preg_replace('/\s*-\s*/', ' - ', $sticker['sticker_number'] ?? '');
+    ?>
+    <div class="physical-sticker-card <?= ($sticker['applicant_type'] ?? '') === 'employee' ? 'sticker-employee' : 'sticker-student' ?>">
         <div class="sticker-header">
-            <div class="sticker-emblem-wrap">
-                <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="University Seal" class="sticker-emblem">
-            </div>
-            <div class="sticker-header-text">
-                <h4 class="sticker-univ-title"><?= strtoupper(e(UNIVERSITY_NAME)) ?></h4>
-                <span class="sticker-tagline">OFFICIAL CAMPUS VEHICLE GATE PASS</span>
+            <div class="sticker-brand-wrap">
+                <img src="<?= BASE_URL ?>/assets/images/PSU%20LOGO.png" alt="University Seal" class="sticker-emblem">
+                <div class="sticker-header-text">
+                    <div class="sticker-univ-title">PARTIDO STATE UNIVERSITY</div>
+                    <div class="sticker-tagline">OFFICIAL CAMPUS VEHICLE GATE PASS</div>
+                </div>
             </div>
             <div class="sticker-type-pill">
                 <?= strtoupper(e($sticker['applicant_type'])) ?>
@@ -66,13 +73,13 @@ include __DIR__ . '/../../includes/header.php';
 
         <div class="sticker-body">
             <div class="sticker-number-banner">
-                <?= e($sticker['sticker_number']) ?>
+                <?= e($formattedStickerNumber) ?>
             </div>
 
             <div class="sticker-plate-box">
-                <span class="plate-label">VEHICLE PLATE / MV FILE:</span>
+                <div class="plate-label">VEHICLE PLATE / MV FILE:</div>
                 <div class="plate-code"><?= e($sticker['plate_number']) ?></div>
-                <span class="plate-type"><?= e($sticker['vehicle_type']) ?> &bull; <?= e($sticker['color']) ?></span>
+                <div class="plate-type"><?= e($sticker['vehicle_type']) ?> &bull; <?= e($sticker['color']) ?></div>
             </div>
 
             <div class="sticker-holder-info">
@@ -83,11 +90,41 @@ include __DIR__ . '/../../includes/header.php';
 
         <div class="sticker-footer">
             <div class="sticker-validity-col">
-                <span class="valid-label">EXPIRY DATE:</span>
-                <span class="valid-val text-danger font-bold"><?= strtoupper(date('M d, Y', strtotime($sticker['valid_until']))) ?></span>
+                <div class="valid-label">VALID UNTIL:</div>
+                <div class="valid-date-lines">
+                    <span class="valid-month"><?= $validMonth ?> </span><span class="valid-day"><?= $validDay ?></span>
+                    <div class="valid-year"><?= $validYear ?></div>
+                </div>
             </div>
-            <div class="sticker-barcode-mock">
-                ||| | |||| | || ||||| | ||||| | |||
+            <div class="sticker-barcode-wrap">
+                <svg class="sticker-barcode-svg" viewBox="0 0 300 52" width="280" height="48" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="8" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="16" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="38" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="60" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="68" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="76" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="84" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="106" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="128" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="136" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="158" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="166" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="174" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="182" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="190" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="212" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="234" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="242" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="250" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="258" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="266" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="288" y="0" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="0" y="28" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="8" y="28" width="4.5" height="22" rx="1.5" fill="#000035" />
+                    <rect x="16" y="28" width="4.5" height="22" rx="1.5" fill="#000035" />
+                </svg>
             </div>
         </div>
     </div>

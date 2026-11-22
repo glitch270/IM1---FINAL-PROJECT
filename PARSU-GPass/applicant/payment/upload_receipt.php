@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Applicant: Upload Cashier Payment Receipt
  */
@@ -63,13 +63,13 @@ include __DIR__ . '/../../includes/header.php';
 
     <?php if ($payment && $payment['payment_status'] === 'rejected'): ?>
         <div class="alert alert-danger">
-            <div class="alert-title">⚠️ Previous Receipt Verification Rejected</div>
+            <div class="alert-title"><i class="fa-solid fa-triangle-exclamation"></i> Previous Receipt Verification Rejected</div>
             <p><strong>Remarks from Cashier Evaluator:</strong> <?= e($payment['verification_remarks'] ?? 'Invalid receipt number or blurry image.') ?></p>
             <small>Please double-check your PSU-OR number and upload a clearer photo.</small>
         </div>
     <?php elseif ($payment && $payment['payment_status'] === 'pending_verification'): ?>
         <div class="alert alert-info">
-            <div class="alert-title">⏳ Receipt Currently Under Verification</div>
+            <div class="alert-title"><i class="fa-solid fa-clock"></i> Receipt Currently Under Verification</div>
             <p>You have previously uploaded receipt PSU-OR #<strong><?= e($payment['psu_or_number']) ?></strong>. You can re-upload below if you made a mistake.</p>
         </div>
     <?php endif; ?>
@@ -81,8 +81,8 @@ include __DIR__ . '/../../includes/header.php';
         <div class="form-group">
             <label class="form-label">Assessed Fee Amount (Non-editable)</label>
             <div class="input-icon-wrap">
-                <span class="input-icon">₱</span>
-                <input type="text" class="form-control font-bold" value="<?= number_format($fee, 2) ?>" readonly style="background: #f4f6f5; font-size: 1.15rem; color: #165b3b;">
+                <span class="input-icon">&#8369;</span>
+                <input type="text" class="form-control font-bold" value="<?= number_format($fee, 2) ?>" readonly style="background: #eef0fb; font-size: 1.15rem; color: #000035;">
             </div>
             <small class="form-hint">Official rate for <?= ucfirst(e($currentApplicant['applicant_type'])) ?> Gate Pass (<?= getValidityYearsByApplicantType($currentApplicant['applicant_type']) ?> years)</small>
         </div>
@@ -107,16 +107,17 @@ include __DIR__ . '/../../includes/header.php';
         <?php if (!empty($payment['receipt_file'])): ?>
             <div class="alert alert-secondary" style="margin-top: 10px;">
                 <strong>Previously Uploaded Receipt:</strong>
-                <a href="<?= BASE_URL . '/' . e($payment['receipt_file']) ?>" target="_blank" class="link-primary" style="margin-left: 5px;">View Current Receipt File ↗</a>
+                <a href="<?= BASE_URL . '/' . e($payment['receipt_file']) ?>" target="_blank" class="link-primary" style="margin-left: 5px;">View Current Receipt File <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
         <?php endif; ?>
 
         <div class="form-actions" style="margin-top: 25px;">
             <a href="<?= BASE_URL ?>/applicant/application/view.php" class="btn btn-outline-secondary">Cancel</a>
-            <button type="submit" class="btn btn-gold btn-lg">Submit Receipt for Verification →</button>
+            <button type="submit" class="btn btn-gold btn-lg">Submit Receipt for Verification <i class="fa-solid fa-arrow-right"></i></button>
         </div>
     </form>
 </div>
 
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
+
 

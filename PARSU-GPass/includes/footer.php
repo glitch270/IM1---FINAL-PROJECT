@@ -9,8 +9,7 @@ $role = $_SESSION['account_role'] ?? null;
                 </main>
                 <footer class="app-footer">
                     <div class="footer-container">
-                        <p>&copy; <?= date('Y') ?> <?= e(UNIVERSITY_NAME) ?> - <?= e(APP_FULL_NAME) ?>. All rights reserved.</p>
-                        <p class="footer-version">PARSU-GPass v1.0.0 (XAMPP / PHP 8+)</p>
+                        <p>&copy; 2026 Partido State University - Online Vehicle Gate Pass System. All rights reserved.</p>
                     </div>
                 </footer>
             </div><!-- /.app-main-content -->
@@ -18,7 +17,7 @@ $role = $_SESSION['account_role'] ?? null;
     <?php else: ?>
         <footer class="public-footer">
             <div class="footer-container">
-                <p>&copy; <?= date('Y') ?> <?= e(UNIVERSITY_NAME) ?>. Online Vehicle Gate Pass Management System.</p>
+                <p>&copy; 2026 Partido State University - Online Vehicle Gate Pass System. All rights reserved.</p>
             </div>
         </footer>
     <?php endif; ?>

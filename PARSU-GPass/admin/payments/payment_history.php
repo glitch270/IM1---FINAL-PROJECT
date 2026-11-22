@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Admin: Complete Payment History & Financial Records
  */
@@ -70,9 +70,9 @@ include __DIR__ . '/../../includes/header.php';
         <p class="page-subtitle">Master ledger of cashier receipts and payment verifications across all applications.</p>
     </div>
     <div>
-        <div class="card" style="padding: 10px 20px; background: #e8f5e9; border: 1px solid #c8e6c9;">
-            <span style="font-size: 0.85rem; color: #2e7d32; font-weight: bold;">TOTAL VERIFIED COLLECTION</span>
-            <div style="font-size: 1.4rem; font-weight: bold; color: #1b5e20;"><?= formatCurrency($totalCollected) ?></div>
+        <div class="card" style="padding: 10px 20px; background: #eef0fb; border: 1px solid #dfe3f7;">
+            <span style="font-size: 0.85rem; color: #000035; font-weight: bold;">TOTAL VERIFIED COLLECTION</span>
+            <div style="font-size: 1.4rem; font-weight: bold; color: #000035;"><?= formatCurrency($totalCollected) ?></div>
         </div>
     </div>
 </div>
@@ -171,4 +171,5 @@ include __DIR__ . '/../../includes/header.php';
 </div>
 
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
+
 

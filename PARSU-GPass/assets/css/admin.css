@@ -87,9 +87,9 @@
 }
 
 .inspector-doc-nav li.active a {
-    background-color: #f0fdf4;
+    background-color: #eef0fb;
     border-color: var(--primary-light);
-    box-shadow: 0 0 0 2px rgba(22, 91, 59, 0.15);
+    box-shadow: 0 0 0 2px rgba(0, 0, 53, 0.15);
 }
 
 .doc-idx-badge {

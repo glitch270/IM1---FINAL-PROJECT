@@ -63,7 +63,7 @@
 }
 
 .wizard-step-item.active {
-    background-color: #f0fdf4;
+    background-color: #eef0fb;
     color: var(--primary-light);
 }
 
@@ -77,7 +77,7 @@
 }
 
 .wizard-step-item.completed .step-num {
-    background-color: #dcfce7;
+    background-color: #dfe3f7;
     color: var(--success-color);
 }
 
@@ -133,8 +133,8 @@
 
 .ownership-card-option.selected {
     border-color: var(--primary-light);
-    background-color: #f0fdf4;
-    box-shadow: 0 0 0 2px rgba(22, 91, 59, 0.2);
+    background-color: #eef0fb;
+    box-shadow: 0 0 0 2px rgba(0, 0, 53, 0.2);
 }
 
 .option-title {
@@ -210,7 +210,7 @@
 
 .upload-item-card.has-uploaded {
     border-left-color: var(--success-color);
-    background-color: #fbfdfc;
+    background-color: #f8fafc;
 }
 
 .upload-item-card.pending-upload {
@@ -256,161 +256,243 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background: #e8f5e9;
+    background: #dfe3f7;
+    color: #000035;
     padding: 8px 14px;
     border-radius: var(--radius-sm);
     font-size: 0.86rem;
     margin-bottom: 12px;
 }
 
-/* Physical Sticker Badge (Card Preview & Print) */
+/* ==========================================================================
+   Physical Sticker Badge (Design matching official PARSU Gate Pass Sticker)
+   ========================================================================== */
 .physical-sticker-card {
-    width: 420px;
-    height: 250px;
-    border-radius: 16px;
-    border: 3px solid #0e3e28;
-    box-shadow: var(--shadow-lg);
-    background: linear-gradient(135deg, #ffffff 0%, #f9fbf9 100%);
-    padding: 16px 20px;
+    width: 580px;
+    max-width: 100%;
+    background: #ffffff !important;
+    border: 4.5px solid #000035;
+    border-radius: 26px;
+    padding: 26px 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 53, 0.18);
     position: relative;
-    overflow: hidden;
-}
-
-.sticker-employee {
-    border-color: #0e3e28;
-    background: linear-gradient(135deg, #ffffff 0%, #f4f8f5 100%);
-}
-
-.sticker-student {
-    border-color: #c69214;
-    background: linear-gradient(135deg, #ffffff 0%, #fefcf5 100%);
+    margin: 0 auto 25px auto;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
 }
 
 .physical-sticker-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: linear-gradient(90deg, #0e3e28 0%, #c69214 50%, #0e3e28 100%);
+    display: none;
+}
+
+.sticker-employee,
+.sticker-student {
+    border-color: #000035;
+    background: #ffffff !important;
 }
 
 .sticker-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-top: 4px;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.sticker-brand-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
 .sticker-emblem {
-    width: 44px;
-    height: 44px;
+    height: 58px;
+    width: 58px;
+    object-fit: contain;
     border-radius: 50%;
-    border: 2px solid var(--gold-color);
 }
 
 .sticker-header-text {
-    flex: 1;
+    text-align: left;
 }
 
 .sticker-univ-title {
-    font-size: 0.88rem;
-    font-weight: 800;
-    color: var(--primary-dark);
-    line-height: 1.1;
+    font-size: 1.18rem;
+    font-weight: 900;
+    color: #000035;
+    letter-spacing: 0.6px;
+    line-height: 1.15;
+    margin: 0;
 }
 
 .sticker-tagline {
-    font-size: 0.62rem;
-    letter-spacing: 0.8px;
-    color: var(--gold-dark);
-    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    color: #ecbb21;
+    font-weight: 800;
+    margin-top: 3px;
     display: block;
+    line-height: 1.1;
 }
 
 .sticker-type-pill {
-    background: var(--primary-dark);
-    color: var(--gold-light);
-    font-size: 0.7rem;
+    background: #000035;
+    color: #ecbb21;
+    font-size: 0.95rem;
     font-weight: 800;
-    padding: 4px 10px;
+    padding: 7px 24px;
     border-radius: 9999px;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 1;
 }
 
 .sticker-body {
     text-align: center;
-    margin: 6px 0;
+    margin: 8px 0 16px 0;
 }
 
 .sticker-number-banner {
-    font-size: 1.45rem;
+    font-size: 2.25rem;
     font-weight: 900;
-    color: var(--primary-dark);
+    color: #000035;
     letter-spacing: 2px;
-    font-family: monospace;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    font-family: inherit;
 }
 
 .sticker-plate-box {
-    margin-top: 4px;
+    margin: 4px 0 8px 0;
 }
 
 .plate-label {
-    font-size: 0.62rem;
-    color: var(--text-muted);
-    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     display: block;
+    margin-bottom: 2px;
 }
 
 .plate-code {
-    font-size: 1.35rem;
+    font-size: 3.4rem;
     font-weight: 900;
-    color: var(--gold-dark);
-    letter-spacing: 1px;
+    color: #ecbb21;
+    letter-spacing: 2.5px;
+    line-height: 1;
+    margin: 4px 0 8px 0;
 }
 
 .plate-type {
-    font-size: 0.72rem;
-    color: var(--text-secondary);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.sticker-holder-info {
+    margin-top: 4px;
 }
 
 .holder-name {
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: var(--text-primary);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #000035;
+    line-height: 1.2;
+    margin-bottom: 2px;
 }
 
 .holder-sub {
-    font-size: 0.68rem;
-    color: var(--text-muted);
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #334155;
+    line-height: 1.3;
 }
 
 .sticker-footer {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    border-top: 1px dashed var(--border-color);
-    padding-top: 6px;
+    gap: 16px;
+    border-top: 1.5px solid #000035;
+    padding-top: 14px;
+    margin-top: 4px;
+}
+
+.sticker-validity-col {
+    text-align: left;
 }
 
 .valid-label {
-    font-size: 0.6rem;
-    color: var(--text-muted);
-    display: block;
-}
-
-.valid-val {
     font-size: 0.78rem;
+    font-weight: 700;
+    color: #000035;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+    display: block;
+    text-transform: uppercase;
 }
 
-.sticker-barcode-mock {
-    font-family: monospace;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    color: #111;
+.valid-date-lines {
+    line-height: 1.15;
+}
+
+.valid-month {
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: #000035;
+}
+
+.valid-day {
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: #ecbb21;
+}
+
+.valid-year {
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: #000035;
+}
+
+.sticker-barcode-wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.sticker-barcode-svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+@media print {
+    .physical-sticker-card {
+        width: 580px !important;
+        border: 4.5px solid #000035 !important;
+        box-shadow: none !important;
+        background: #ffffff !important;
+        page-break-inside: avoid;
+        margin: 20px auto !important;
+    }
+    .sticker-type-pill {
+        background: #000035 !important;
+        color: #ecbb21 !important;
+    }
+    .plate-code, .valid-day, .sticker-tagline {
+        color: #ecbb21 !important;
+    }
+    .sticker-univ-title, .sticker-number-banner, .holder-name, .valid-month, .valid-year {
+        color: #000035 !important;
+    }
 }
 

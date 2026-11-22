@@ -67,7 +67,7 @@
 }
 
 .icon-primary   { background: #e0f2fe; color: #0284c7; }
-.icon-success   { background: #dcfce7; color: #16a34a; }
+.icon-success   { background: #dfe3f7; color: #000035; }
 .icon-warning   { background: #fef3c7; color: #d97706; }
 .icon-danger    { background: #fee2e2; color: #dc2626; }
 .icon-gold      { background: #fef9c3; color: #ca8a04; }
@@ -221,7 +221,7 @@
     margin-top: 4px;
     font-size: 0.85rem;
     color: var(--text-secondary);
-    background: #f8faf9;
+    background: #eef0fb;
     padding: 6px 10px;
     border-radius: var(--radius-sm);
 }

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * PARSU-GPass: Digital Canvas Signature Pad
  * Full Touch & Mouse Support, Undo, Clear, Base64 PNG Export
  */
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         canvas.height = 200 * 2;
         ctx.scale(2, 2);
 
-        ctx.strokeStyle = '#0e3e28';
+        ctx.strokeStyle = '#000035';
         ctx.lineWidth = 2.5;
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
             currentStroke = [];
             if (statusLabel) {
                 statusLabel.textContent = '✓ Specimen signature captured.';
-                statusLabel.style.color = '#2e7d32';
+                statusLabel.style.color = '#000035';
             }
         }
     }
@@ -163,4 +163,5 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
 

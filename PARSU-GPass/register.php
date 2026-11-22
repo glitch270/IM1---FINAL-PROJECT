@@ -24,10 +24,8 @@ include __DIR__ . '/includes/header.php';
 <div class="auth-page-wrapper">
     <div class="register-container">
         <div class="auth-brand-header">
-            <div class="auth-logo-wrap">
-                <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="University Logo" class="auth-logo-img">
-            </div>
-            <h1 class="auth-title">PARSU-<span>GPass</span></h1>
+            <img src="<?= BASE_URL ?>/assets/images/PSU%20LOGO.png" alt="Partido State University Logo" class="auth-logo-img">
+            <h1 class="auth-title">PARSU-GPass</h1>
             <p class="auth-subtitle">New Applicant Registration Portal</p>
         </div>
 

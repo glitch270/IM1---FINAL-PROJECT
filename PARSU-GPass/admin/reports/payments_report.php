@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Admin: Financial Payments & Collections Report
  */
@@ -70,7 +70,7 @@ include __DIR__ . '/../../includes/header.php';
         <p class="page-subtitle">Detailed university cashier revenue and official receipt audit.</p>
     </div>
     <div class="header-action-group">
-        <button type="button" class="btn btn-outline-secondary" onclick="window.print()">🖨️ Print Financial Report</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Financial Report</button>
     </div>
 </div>
 
@@ -106,25 +106,25 @@ include __DIR__ . '/../../includes/header.php';
 <!-- Revenue Summary Cards (Visible on screen & print) -->
 <div class="dashboard-metrics-grid" style="margin-bottom: 20px;">
     <div class="metric-card card">
-        <div class="metric-icon icon-primary">🎓</div>
+        <div class="metric-icon icon-primary"><i class="fa-solid fa-graduation-cap"></i></div>
         <div class="metric-info">
             <span class="metric-label">Student Collections</span>
             <div class="metric-value font-bold"><?= formatCurrency($studentTotal) ?></div>
-            <small class="metric-subtext"><?= $studentCount ?> Transactions (@ ₱130.00)</small>
+            <small class="metric-subtext"><?= $studentCount ?> Transactions (@ &#8369;130.00)</small>
         </div>
     </div>
 
     <div class="metric-card card">
-        <div class="metric-icon icon-indigo">💼</div>
+        <div class="metric-icon icon-indigo"><i class="fa-solid fa-briefcase"></i></div>
         <div class="metric-info">
             <span class="metric-label">Employee Collections</span>
             <div class="metric-value font-bold"><?= formatCurrency($employeeTotal) ?></div>
-            <small class="metric-subtext"><?= $employeeCount ?> Transactions (@ ₱280.00)</small>
+            <small class="metric-subtext"><?= $employeeCount ?> Transactions (@ &#8369;280.00)</small>
         </div>
     </div>
 
-    <div class="metric-card card" style="background: #f8faf9; border-top: 4px solid #165b3b;">
-        <div class="metric-icon icon-success">💰</div>
+    <div class="metric-card card" style="background: #eef0fb; border-top: 4px solid #000035;">
+        <div class="metric-icon icon-success"><i class="fa-solid fa-coins"></i></div>
         <div class="metric-info">
             <span class="metric-label">Total Collections</span>
             <div class="metric-value font-bold text-success" style="font-size: 1.4rem;"><?= formatCurrency($grandTotal) ?></div>
@@ -191,4 +191,5 @@ include __DIR__ . '/../../includes/header.php';
 </div>
 
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
+
 

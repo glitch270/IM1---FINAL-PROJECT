@@ -218,6 +218,7 @@ if ($application) {
         <?php endif; ?>
 
         <div class="dashboard-action-buttons" style="margin-top: 20px;">
+            <a href="<?= BASE_URL ?>/applicant/application/create.php?new=1" class="btn btn-primary">Register Another Vehicle</a>
             <a href="<?= BASE_URL ?>/applicant/application/view.php" class="btn btn-outline-primary">View Full Details</a>
             <a href="<?= BASE_URL ?>/applicant/documents/view_documents.php" class="btn btn-outline-secondary">My Documents</a>
             <a href="<?= BASE_URL ?>/applicant/payment/payment_status.php" class="btn btn-outline-secondary">Payment History</a>

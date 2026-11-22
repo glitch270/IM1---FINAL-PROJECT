@@ -1,23 +1,23 @@
 /**
  * PARSU-GPass: Core Stylesheet
  * Universidad de Partido (Partido State University)
- * Deep Green (#0e3e28) & University Gold (#c69214)
+ * Dark Navy (#000035) & University Gold (#c69214)
  */
 
 :root {
-    --primary-color: #0e3e28;
-    --primary-light: #165b3b;
-    --primary-dark: #09281a;
+    --primary-color: #000035;
+    --primary-light: #14146b;
+    --primary-dark: #00001f;
     --gold-color: #c69214;
     --gold-light: #f3c64c;
     --gold-dark: #9e730a;
     --accent-indigo: #3b429f;
-    --success-color: #2e7d32;
+    --success-color: #000035;
     --danger-color: #c62828;
     --warning-color: #ef6c00;
     --info-color: #0277bd;
     
-    --bg-main: #f5f7f6;
+    --bg-main: #f5f6fb;
     --bg-surface: #ffffff;
     --text-primary: #1f2937;
     --text-secondary: #4b5563;
@@ -121,11 +121,9 @@ a:hover {
 }
 
 .brand-logo-img {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background-color: var(--gold-color);
-    padding: 2px;
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .brand-main {
@@ -508,7 +506,7 @@ a:hover {
 }
 
 .badge-primary { background: #e0f2fe; color: #0369a1; }
-.badge-success { background: #dcfce7; color: #15803d; }
+.badge-success { background: #dfe3f7; color: #000035; border: 1px solid #c7cff3; }
 .badge-danger  { background: #fee2e2; color: #b91c1c; }
 .badge-warning { background: #fef3c7; color: #b45309; }
 .badge-info    { background: #e0e7ff; color: #4338ca; }
@@ -530,11 +528,11 @@ a:hover {
 }
 
 .alert-danger  { background: #fff1f2; border-color: var(--danger-color); color: #9f1239; }
-.alert-success { background: #f0fdf4; border-color: var(--success-color); color: #166534; }
+.alert-success { background: #eef0fb; border-color: var(--success-color); color: #000035; }
 .alert-warning { background: #fffbeb; border-color: var(--warning-color); color: #92400e; }
 .alert-info    { background: #eff6ff; border-color: var(--info-color); color: #1e40af; }
-.alert-primary { background: #ecfdf5; border-color: var(--primary-light); color: #065f46; }
-.alert-secondary{ background: #f8faf9; border-color: #9ca3af; color: #374151; }
+.alert-primary { background: #eef0fb; border-color: var(--primary-light); color: #000035; }
+.alert-secondary{ background: #f8fafc; border-color: #9ca3af; color: #374151; }
 
 /* Tables */
 .table-responsive {
@@ -609,7 +607,7 @@ a:hover {
 .form-control:focus {
     outline: none;
     border-color: var(--primary-light);
-    box-shadow: 0 0 0 3px rgba(22, 91, 59, 0.15);
+    box-shadow: 0 0 0 3px rgba(0, 0, 53, 0.15);
 }
 
 .form-control:disabled, .form-control[readonly] {
